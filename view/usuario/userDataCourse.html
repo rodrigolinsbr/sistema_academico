@@ -1,0 +1,30 @@
+<h1 class="page-header">Dados do curso</h1>
+<?php
+foreach ($retorno_alunos as $alunos) {
+
+	// echo "Id:".$alunos->id_user;
+	// echo "<br>";
+	// echo "Nome: " .$alunos->nome;
+ //    echo "email:" .$alunos->email;
+}
+?>
+
+
+            <!-- controller/usuario/alterarRegistro -->
+              <form class="form-cadastro round" id="formUsuario" method="post" action="<?php echo URL_PORTAL?>usuario/update/">
+
+              <label>Id<br /> <input name="id" id="id" type="text" value="<?php echo $alunos->id_user; ?>" class="validate[required,custom[id]] input-form round" hidden/></label>
+              <label>Nome<br /> <input name="nome" id="nome" type="text" value="<?php echo $alunos->nome; ?>" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>E-mail<br /> <input name="email" id="email" type="text" value="<?php echo $alunos->email; ?>" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Login<br /> <input name="login" id="login" type="text" value="<?php echo $alunos->login; ?>" /></label>
+              <label>Senha<br /> <input name="senha" id="senha" type="password" value="<?php echo $alunos->senha; ?>"/></label>
+
+              <!-- solicitacao obrigatoria -->
+              <!-- <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social" class="validate[required] input-form round"  /></label> -->
+
+
+              <label> <input id="submit" type="submit" value="alterar dados" class="bt-enviar round " /></label>
+
+
+
+          </form>

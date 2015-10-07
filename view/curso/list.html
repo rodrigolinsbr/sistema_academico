@@ -1,0 +1,53 @@
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Listagem de Ofertas</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <?php
+                    if (count($courses) > 0):
+                        foreach($courses as $courseList):
+                ?>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="<?php echo URL_PORTAL?>curso/edit/<?php echo $courseList->id; ?>">editar</a>
+                            <br />
+                            <br>
+                        </div>
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Id oferta:' .utf8_encode($courseList->id);
+                                                            ?>
+                            <br />
+                        </div>
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Nome oferta:' .utf8_encode($courseList->nomeoferta);
+                                                            ?>
+                            <br />
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                            <?php
+                                echo 'Código oferta: ' .utf8_encode($courseList->codigooferta);
+                            ?>
+                            </p>
+                        </div>
+                         <div class="panel-body">
+                            <p>
+                            <?php
+                                echo 'Categoria oferta: ' .utf8_encode($courseList->categoriaoferta);
+                            ?>
+                            </p>
+                        </div>
+                    </div>
+              </div>
+                <?php
+
+                        endforeach;
+                    endif;
+                ?>
+
+            </div>

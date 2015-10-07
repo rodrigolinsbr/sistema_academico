@@ -1,0 +1,81 @@
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Cedes Alterar</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+
+              <?php
+                    if (count($resultados) > 0):
+                        echo "aqui no foreache";
+
+                        foreach($resultados as $result):
+                ?>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Id:' .$result->id;
+                            ?>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                            <?php
+                                echo 'Nome: ' .utf8_encode($result->nome);
+                            ?>
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Profissao: '.utf8_encode($result->email);
+                            ?>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Senha: '.utf8_encode($result->senha);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                        endforeach;
+                    endif;
+                ?>
+
+
+
+
+
+
+               <!--  <?php
+                    //print_r($resultados);
+
+                    // echo "resultados: " .$resultados['nome'];
+                    echo "<br>";
+                    foreach ($resultados as $result) {
+
+                        echo 'imprime aqui: '.utf8_encode($result->nome);
+                        echo "<br>";
+                    }
+                ?>
+                 -->
+            </div>
+
+             <form class="form-cadastro round" id="formUsuario" method="post" action="<?php echo URL_PORTAL?>cedes/update/">
+
+              <label>Nome<br /> <input name="nome" id="nome" type="text" value="<?php echo $result->nome; ?>" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>E-mail<br /> <input name="email" id="email" type="text" value="<?php echo $result->email; ?>" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Profissao<br /> <input name="profissao" id="profissao" type="text" value="<?php echo $result->profissao; ?>" /></label>
+              <label>Senha<br /> <input name="senha" id="senha" type="password" value="<?php echo $result->nome; ?>"/></label>
+
+              <!-- solicitacao obrigatoria -->
+              <!-- <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social" class="validate[required] input-form round"  /></label> -->
+
+
+              <label> <input id="submit" type="submit" value="ENTRAR" class="bt-enviar round " /></label>
+
+
+
+          </form>

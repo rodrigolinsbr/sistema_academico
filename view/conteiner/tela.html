@@ -1,0 +1,91 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<section class="wrapper-login">
+	<h2>Contêiner Saúde</h2>
+
+        <form class="form-cadastro round" id="formUsuario" method="post" action="<?php echo URL_PORTAL?>conteiner/chamaModel/">
+
+
+<!-- action="<?php //echo URL_PORTAL?>cedes/chamaModel/" -->
+        <!-- <form class="form-cadastro round" id="formUsuario" action="< echo URL_PORTAL?>cedes/processalogin/" method="post">  entra no controller controller/cedes/nome_do_metodo_desejado -->
+        	   <p>
+        	   	<?php echo $somatorio;?>
+        	   </p>
+
+              <label>Nome<br /> <input name="nome" id="nome" type="text" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>Login<br /> <input name="login" id="login" type="text"  /></label>
+              <label>E-mail<br /> <input name="email" id="email" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Senha<br /> <input type="password" name="senha" id="senha"/></label>
+              <!-- <label>Sexo<br /> <input type="text" name="sexo" id="sexo"/></label> -->
+              <label>Endereço<br /> <input name="endereco" id="endereco" type="text"  /></label>
+              <label>Cpf<br /> <input type="text" name="cpf" id="cpf"/></label>
+              <label>Sexo<br /> <input type="text" name="sexo" id="sexo"/></label>
+              <!-- <select name="sexo">
+                <option value=""></option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+              </select> -->
+              <label>Telefone<br /> <input name="telefone" id="telefone" type="text"  /></label>
+
+
+
+              <!-- solicitacao obrigatoria -->
+              <!-- <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social" class="validate[required] input-form round"  /></label> -->
+
+
+              <label> <input id="submit" type="submit" value="ENTRAR" class="bt-enviar round " /></label>
+          </form>
+
+          <br />
+          <form method="post" action="<?php echo URL_PORTAL?>conteiner/chamaPesquisar/" >
+          	<br />
+	          	<label>Pesquisar email<br /> <input name="pesquisar" id="pesquisar" type="text"  /></label>
+	            <label> <input type="submit" value="PESQUISAR" class="bt-enviar round " /></label>
+          </form>
+
+
+           <form method="post" action="<?php echo URL_PORTAL?>conteiner/listar/" >
+            <br />
+              <label>Listar todos os dados<br /></label>
+              <label> <input type="submit" value="Listar" class="bt-enviar round " /></label>
+          </form>
+
+
+
+          <form method="post" action="<?php echo URL_PORTAL?>conteiner/login/" >
+            <br />
+              <label>Tela de login<br /></label>
+              <label> <input type="submit" value="login" class="bt-enviar round " /></label>
+          </form>
+
+
+
+
+          <form method="post" action="<?php echo URL_PORTAL?>conteiner/chamaAlterar/" >
+            <br />
+              <label>Alterar dados<br /></label>
+              <br/>
+              <label>Nome<br /> <input name="nome" id="nome" type="text" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>E-mail<br /> <input name="email" id="email" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Profissao<br /> <input name="profissao" id="profissao" type="text"  /></label>
+              <label>Senha<br /> <input type="password" name="senha" id="senha"/></label>
+              <label> <input id="submit" type="submit" value="ALTERAR" class="bt-enviar round " /></label>
+          </form>
+</section>
+
+
+              <script type="text/javascript">
+
+
+				// $('#submit').click(function(){
+				// 	var nome = $('#nome').val();
+				// 	var y = $('#email').val();
+				// 	var z = $('#profissao').val();
+				// 	var x = $('#senha').val();
+
+					// alert(nome);
+					// alert(y);
+					// alert(z);
+					// alert(x);
+				})
+			  </script>

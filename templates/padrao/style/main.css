@@ -1,0 +1,134 @@
+@import "reset.css";
+@charset "UTF-8";
+/* CSS Document */
+
+
+body { background:url(../img/bg-topo.png) repeat-x #f5f5f5; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#5b5b5b;}
+li { list-style:none}
+a { color:#303130; text-decoration:none}
+a:hover { text-decoration:underline}
+.wrapper{width:auto; margin:0 auto; position:relative;}
+header{ height:124px; width:auto; width:98%}
+header h1 a { background:url(../img/logo.png) no-repeat; width:402px; height:112px; float:left; margin:12px 0 0 0; display:block }
+header h1 span {display:none}
+.login{ height:40px; min-width:198px; background:url(../img/bg-login.jpg) repeat-x; border:1px solid #d6d6d6; float:right; margin:36px 10px 0 0}
+.login img { margin:6px 0 0 10px; float:left}
+.login p{ font-size:12px; color:#5b5b5b; padding:12px 10px 0 10px; float:left}
+.login p span{ color:#0a66a8; text-transform:uppercase}
+.bt-sair {float:right; margin-right:2%}
+.bt-sair a { width:94px; height:42px; background:url(../img/bt-sair.png) no-repeat; display:block; float:right; margin-top:36px; }
+.busca{ height:61px; }
+.busca form{ margin-left:227px; width:500px; height:40px; margin-top:12px; float:left}
+.busca span { color:#FFF; margin-right:10px; float:left; margin-top:12px}
+.input-busca{ background:url(../img/bg-busca.png) no-repeat; width:254px; height:40px; border:none; padding:0px 10px 0px 35px; color:#5b5b5b; float:left}
+.bt-busca-ok{ background:url(../img/bt-ok-busca.png) no-repeat; width:66px; height:40px; cursor:pointer; float:left; margin-left:5px }
+.middle { margin-top:0px; background:url(../img/bg-left.png) repeat-y left;}
+
+.left { width:25%; min-height:500px; float:left; max-width:228px}
+.right{min-height:500px; float:left; width:75%;}
+
+
+/*Menu*/
+nav { margin:20px 0 0 20px; float:left}
+nav ul li a{ width:195px; height:48px; margin-bottom:4px; display:block; background-image:url(../img/menu.png); background-repeat:no-repeat; text-indent:-5000px }
+
+#menu1 a{ background-position:0px 0px}
+#menu1 a:hover{ background-position:-195px 0px}
+
+#menu2 a{ background-position:0px -52px}
+#menu2 a:hover{ background-position:-195px -52px}
+
+#menu3 a{ background-position:0px -104px}
+#menu3 a:hover{ background-position:-195px -104px}
+
+#menu4 a{ background-position:0px -156px}
+#menu4 a:hover{ background-position:-195px -156px}
+
+#menu5 a{ background-position:0px -208px}
+#menu5 a:hover{ background-position:-195px -208px}
+
+#menu6 a{ background-position:0px -260px}
+#menu6 a:hover{ background-position:-195px -260px}
+
+.borda-conteudo{ width:100%; min-height:200px; margin:20px; border:1px solid #cccccc; background:#fff}
+.tb-conteudo{ width:98%; margin-top:10px; margin-left:10px;}
+.tb-conteudo tr{ width:80%;}
+.titulo-tb{background:url(../img/bg-repeat-titulo.jpg) repeat-x; height:45px; }
+.titulo-tb td{ border: 1px solid #FFF;}
+.titulo-tb h2{ color:#fff; font-size:20px; margin:10px 0 0 10px; float:left;}
+.bt-relatorio{ background:url(../img/bt-relatorio.png) no-repeat; width:125px; height:30px; display:block; float:right; text-indent:-5000px; margin:8px 8px 0 0}
+.bt-imprimir{ background:url(../img/bt-imprimir.png) no-repeat; width:125px; height:30px; display:block; float:right; text-indent:-5000px; margin:8px 8px 0 0}
+.barra-add-novo-tb{ background:url(../img/bg-barra-azul.jpg) repeat-x; height:34px;}
+.barra-add-novo-tb td{border: 1px solid #FFF; border-bottom:none; border-top:none}
+.bt-add { background:url(../img/icon-add.png) no-repeat; padding-left:20px; margin:10px 0 0 10px; float:left }
+.bt-excluir-todos { background:url(../img/bt-excluir-todos.png) no-repeat; padding-left:20px; margin:7px 0 0 10px; float:left;}
+
+/*Tabela de dados*/
+.tabela-dados { border: 1px solid #FFF; border-top:none; border-left:none; margin-bottom:10px; width: 100%; }
+.tabela-dados td { border: 1px solid #FFF; border-bottom:none; border-right:none; padding:5px; background:#e8f2fa}
+#titulo-dados td.first { width: 20px; }
+#titulo-dados td { background:url(../img/bg-barra-titulo-tab.jpg) repeat-x bottom #ACACAC!important; min-height:34px; vertical-align:middle; color:#FFF; font-weight:bold; }
+#rodape-dados td { background:#bab9b9; height:34px;}
+
+
+	/*Tamanho colunas*/
+	
+	.col02 { width:20%}
+	.col03,.col04, .col05, .col06, .col07, .col08, .col09{ width:12%}
+	
+	/*Fim Tamanho colunas*/
+
+	
+	
+	.linha-cinza td{ background-color:#e6e7e8}
+	.acoes ul { display:block; }
+	.acoes ul li { text-align:center; vertical-align:middle}
+	.input-selecao{ margin:5px 5px 5px 7px; }
+	.bt-editar { background: url(../img/bt-edit.png) no-repeat -15px 0px; width:15px; height:15px; display:block; float:left; margin-top:3px}
+	.bt-editar:hover { background: url(../img/bt-edit.png) no-repeat 0px 0px;}
+	
+	.bt-excluir { background: url(../img/bt-excluir.png) no-repeat -13px 0px; width:13px; height:15px; display:block; float:left; margin-top:3px}
+	.bt-excluir:hover { background: url(../img/bt-excluir.png) no-repeat 0px 0px; }
+    
+    .bt-alunos { background: url(../img/bt-alunos.png) no-repeat -15px 0px; width:15px; height:15px; display:block; float:left; margin-top:3px}
+	.bt-alunos:hover { background: url(../img/bt-alunos.png) no-repeat 0px 0px; }
+    
+	.separador-acoes{ width:1px; background:url(../img/separador-acoes.png) repeat-y; height:23px; width:2px; float:left; margin:0px 5px 0px 5px}
+
+
+
+#paginacao { float:right; margin:10px; display:block;}
+#paginacao li{ display:inline}
+#paginacao li a { background:url(../img/bg-paginacao.png) no-repeat; width:27px; height:18px; color:#FFF; display: block; float:left; text-align:center; padding-top:5px}
+#bt-anterior{ background:url(../img//bt-ant-paginacao.png) no-repeat  center left!important;}
+#bt-proximo{ background:url(../img/bt-prox-paginacao.png) no-repeat  center right!important; }
+.selected { background:url(../img/bg-paginacao.png) 0px -23px no-repeat !important;}
+
+
+/*Página Cadastro*/
+
+.form-cadastro{ margin:20px}
+.form-cadastro label { width:100%; float:left; margin-top:20px;}
+.form-cadastro .campo-menor { width:48%; float:left; margin-right:4%} 
+.no-margin-rigth{ margin-right:0%!important}
+.input-form { background:url(../img/bg-input-form.jpg) repeat-x; height:27px; width:100%; border:1px solid #bbbaba; margin:5px 0px 5px 0px; padding:5px;}
+.textarea-form{ background: #E8E8E8 url(../img/bg-input-form.jpg) repeat-x; width:100%; border:1px solid #bbbaba; margin:5px 0px 5px 0px; padding:5px}
+.bt-enviar{ background:url(../img/bg-bt-cadastro.jpg) repeat-x; height:38px; width:75px; border:1px solid #044f85; color:#FFF; text-align:center; cursor:pointer; float:right;}
+.carregando { background: url(../img/loading.gif) no-repeat right;}
+
+.wrapper-login{ background:url(../img/bg-login.png); width:623px; height:449px; margin:20px auto;}
+.marca-login{ margin:0 auto; !important; width:402px; height:112px;}
+.wrapper-login h2 { text-align:center; color:#f4802d; font-size:20px; padding-top:30px; padding-bottom:5px;}
+.wrapper-login form { width:489px; height:324px; background:#FFF; margin:10px 0 0 60px}
+.wrapper-login form label { width:425px; margin-left:25px }
+.wrapper-login form select { width:438px; height: 35px; margin: 5px 0; padding: 10px;}
+.wrapper-login form select option { padding:5px; height:15px}
+
+/*Alert*/
+.bg-alert{ width:100%; height:100%; background:url(../img/bg-escuro.png) repeat; position:absolute; z-index:1000; display: none;}
+.alert{ background:url(../img/bg-alert.png) no-repeat; width:376px; height:204px; margin:150px auto}
+.alert h3 { font-size:14px; font-weight:bold; text-align:center; padding-top:25px}
+.alert p{ text-align:center; padding:30px 10px 0 10px}
+.alert .bt-sim, .alert .bt-nao { float:left}
+.alert .bt-sim { margin:30px 0 0 60px; }
+.alert .bt-nao { margin:30px 0 0 10px; }

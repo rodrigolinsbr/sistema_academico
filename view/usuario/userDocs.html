@@ -1,0 +1,44 @@
+<h1 class="page-header">Alterar dados do aluno</h1>
+<?php
+foreach ($retorno_alunos as $alunos) {
+
+    echo "<br>Id:".$alunos->id_user;
+    // echo "<br>";
+    // echo "Nome: " .$alunos->nome;
+     //echo "Conselho:" .$alunos->conselho;
+}
+?>
+
+
+            <!-- controller/usuario/alterarRegistro -->
+              <form class="form-cadastro round" id="formUsuario" method="post" action="<?php echo URL_PORTAL?>usuario/update/">
+
+            <label>Id:<br /> <input name="id" id="id" type="text" value="<?php echo $alunos->id_user; ?>" class="validate[required,custom[id]] input-form round" hidden/></label>
+              <label>Nome:<br /> <input name="nome" id="nome" type="text" value="<?php echo $alunos->nome; ?>" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>CPF:<br /> <input name="cpf" id="cpf" type="text" value="<?php echo $alunos->cpf; ?>" /></label>
+              <label>RG:<br /> <input name="rg" id="rg" type="text" value="<?php echo $alunos->rg; ?>" /></label>
+              <label>E-mail:<br /> <input name="email" id="email" type="text" value="<?php echo $alunos->email; ?>" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Telefone:<br /> <input name="telefone" id="telefone" type="text" value="<?php echo $alunos->telefone; ?>" /></label>
+              <label>Nome instituição:<br /> <input name="nome_instituicao" id="nome_instituicao" type="text" value="<?php echo $alunos->nome_instituicao; ?>" /></label>
+              <label>UF:<br /> <input name="uf_atuacao" id="uf_atuacao" type="text" value="<?php echo $alunos->uf_atuacao; ?>" /></label>
+              <label>Município:<br /> <input name="municipio_atuacao" id="municipio_atuacao" type="text" value="<?php echo $alunos->municipio_atuacao; ?>" /></label>
+              <label>Conselho:<br /> <input name="conselho" id="conselho" type="text" value="<?php echo $alunos->conselho; ?>"/></label>
+              <label>Número conselho:<br /> <input name="num_conselho" id="num_conselho" type="text" value="<?php echo $alunos->num_conselho; ?>" /></label>
+              <label>UF conselho:<br /> <input name="uf_conselho" id="uf_conselho" type="text" value="<?php echo $alunos->uf_conselho; ?>" /></label>
+              <label>Graduação:<br /> <input name="graduacao" id="graduacao" type="text" value="<?php echo $alunos->graduacao; ?>" /></label>
+              <label>Ano de graduação:<br /> <input name="ano_graduacao" id="ano_graduacao" type="text" value="<?php echo $alunos->ano_graduacao; ?>" /></label>
+              <label>Situação edição:<br /> <input name="situacao_edicao" id="situacao_edicao" type="text" value="<?php echo $alunos->situacao_edicao; ?>" /></label>
+              <label>Data situação:<br /> <input name="data_situacao" id="data_situacao" type="text" value="<?php echo $alunos->data_situacao; ?>" /></label>
+              <label>Dsei:<br /> <input name="dsei" id="dsei" type="text" value="<?php echo $alunos->dsei; ?>" /></label>
+              <label>Ciclo:<br /> <input name="ciclo" id="ciclo" type="text" value="<?php echo $alunos->ciclo; ?>" /></label>
+              <label>Etapa:<br /> <input name="etapa" id="etapa" type="text" value="<?php echo $alunos->etapa; ?>" /></label>
+
+              <!-- solicitacao obrigatoria -->
+              <!-- <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social" class="validate[required] input-form round"  /></label> -->
+
+
+              <label> <input id="submit" type="submit" value="alterar dados" class="bt-enviar round " /></label>
+
+
+
+          </form>

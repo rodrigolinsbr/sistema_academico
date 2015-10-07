@@ -1,0 +1,44 @@
+<?php
+		for($i=0;$i<sizeof($fail);$i++){
+			if ($i == 0){
+				$naoEnviados = $fail[$i];
+			} else {
+				$naoEnviados .= ', '.$fail[$i];
+			}
+		}
+		if ($naoEnviados != ''){
+
+?>
+		<p>
+			Erro ao enviar o(s) seguinte(s) convite(s): <strong><?=$naoEnviados?></strong>
+		</p>
+		<br />
+		<br />
+		<br />
+		<br />
+		<p>
+			<a href="<?=URL_PORTAL?>usuario/listaBolao/">Voltar</a>
+		</p>
+<?php
+
+		}
+
+?>
+<!--
+<root>
+	<success>
+		<msg><![CDATA[<?php echo $sucess;?>]]></msg>
+	</success>
+	<fail>
+		<?php
+		for($i=0;$i<sizeof($fail);$i++){
+		?>
+			<email><![CDATA[<?php echo $fail[$i];?>]]></email>
+		<?php
+		}
+		?>
+	</fail>
+
+</root>
+
+-->

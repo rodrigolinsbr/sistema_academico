@@ -1,0 +1,10 @@
+<?php
+	header("Content-type: application/xml; charset=UTF-8");
+	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+?>
+<root>
+	<mensagem>
+		<msg><![CDATA[<?php print $result;?>]]></msg>
+		<url><![CDATA[<?php print $msg;?>]]></url>
+	</mensagem>
+</root>

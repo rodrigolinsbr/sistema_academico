@@ -1,0 +1,260 @@
+        <section class="right">
+
+        	<div class="borda-conteudo round">
+
+            	<table cellpadding="0" cellspacing="0" class="tb-conteudo">
+                	<tr class="titulo-tb">
+                    	<td>
+                        <h2>CADASTRO DE ALUNO</h2>
+
+                        </td>
+
+                    <tr>
+
+                    <tr>
+                    	<td>
+                        	<form class="form-cadastro" method="post" action="/aluno/processaAluno/" id="frmCadAluno">
+
+                                <input type="hidden" name="alu_id" id="alu_id" value="<?php echo $alu_id?>" /></label>
+
+                                <label for="alu_nome">Nome:<br />
+                                <input type="text" name="alu_nome" id="alu_nome" class="validate[required] input-form round" value="<?php echo $alu_nome?>" /></label>
+
+                                <label for="alu_origem" class="campo-menor">Origem:<br />
+                                <input type="text" name="alu_origem" id="alu_origem" class="validate[required] input-form round" value="<?php echo $alu_origem?>" /></label>
+
+                                <label for="alu_data_origem" class="campo-menor no-margin-rigth">Data de Origem:<br />
+                                <input type="text" name="alu_data_origem" id="alu_data_origem" class="validate[required] input-form round data" value="<?php echo $alu_data_origem?>" /></label>
+
+                                <label for="alu_identidade" class="campo-menor">Identidade:<br />
+                                <input type="text" name="alu_identidade" id="alu_identidade" class="input-form round" value="<?php echo $alu_identidade?>" /></label>
+
+                                <label for="alu_cpf" class="campo-menor no-margin-rigth">CPF:<br />
+                                <input type="text" name="alu_cpf" id="alu_cpf" class="input-form round cpf" value="<?php echo $alu_cpf?>" /></label>
+
+                                <label for="alu_sexo" class="campo-menor">Sexo:<br />
+                                <input type="radio" name="alu_sexo" id="alu_sexoM"<?php echo ($alu_sexo == 'M' || $alu_sexo == '') ? ' checked="checked"' : '' ;?> class="validate[required]" value="M" /> Masculino
+                                <input type="radio" name="alu_sexo" id="alu_sexoF"<?php echo $alu_sexo == 'F' ? ' checked="checked"' : '';?> class="validate[required]" value="F" /> Feminino
+                                </label>
+
+                                <label for="alu_nascimento" class="campo-menor no-margin-rigth">Data de Nascimento:<br />
+                                <input type="text" name="alu_nascimento" id="alu_nascimento" class="validate[required] input-form round data" value="<?php echo $alu_nascimento?>" /></label>
+
+                                <label for="alu_localidade" class="campo-menor">Localidade:<br />
+                                <input type="text" name="alu_localidade" id="alu_localidade" class="input-form round" value="<?php echo $alu_localidade?>" /></label>
+
+                                <label for="alu_cartorio" class="campo-menor no-margin-rigth">Cartório:<br />
+                                <input type="text" name="alu_cartorio" id="alu_cartorio" class=" input-form round" value="<?php echo $alu_cartorio?>" /></label>
+
+                                <label for="alu_cartorio_estado" class="campo-menor">Estado do Cartório:<br />
+                                <select name="alu_cartorio_estado" id="alu_cartorio_estado" class="input-form round">
+                                       <option value="">Selecione</option>
+                                       <option value="AC"<?php echo $alu_cartorio_estado == 'AC'? 'selected="selected"' : '';?>>ACRE</option>
+                                       <option value="AL"<?php echo $alu_cartorio_estado == 'AL'? 'selected="selected"' : '';?>>ALAGOAS</option>
+                                       <option value="AP"<?php echo $alu_cartorio_estado == 'AP'? 'selected="selected"' : '';?>>AMAPA</option>
+                                       <option value="AM"<?php echo $alu_cartorio_estado == 'AM'? 'selected="selected"' : '';?>>AMAZONAS</option>
+                                       <option value="BA"<?php echo $alu_cartorio_estado == 'BA'? 'selected="selected"' : '';?>>BAHIA</option>
+                                       <option value="CE"<?php echo $alu_cartorio_estado == 'CE'? 'selected="selected"' : '';?>>CEARÁ</option>
+                                       <option value="DF"<?php echo $alu_cartorio_estado == 'DF'? 'selected="selected"' : '';?>>DISTRITO FEDERAL</option>
+                                       <option value="ES"<?php echo $alu_cartorio_estado == 'ES'? 'selected="selected"' : '';?>>ESPÍRITO SANTO</option>
+                                       <option value="GO"<?php echo $alu_cartorio_estado == 'GO'? 'selected="selected"' : '';?>>GOIAS</option>
+                                       <option value="MA"<?php echo $alu_cartorio_estado == 'MA'? 'selected="selected"' : '';?>>MARANHÃO</option>
+                                       <option value="MT"<?php echo $alu_cartorio_estado == 'MT'? 'selected="selected"' : '';?>>MATO GROSSO</option>
+                                       <option value="MS"<?php echo $alu_cartorio_estado == 'MS'? 'selected="selected"' : '';?>>MATO GROSSO DO SUL</option>
+                                       <option value="MG"<?php echo $alu_cartorio_estado == 'MG'? 'selected="selected"' : '';?>>MINAS GERAIS</option>
+                                       <option value="PA"<?php echo $alu_cartorio_estado == 'PA'? 'selected="selected"' : '';?>>PARÁ</option>
+                                       <option value="PB"<?php echo $alu_cartorio_estado == 'PB'? 'selected="selected"' : '';?>>PARAÍBA</option>
+                                       <option value="PR"<?php echo $alu_cartorio_estado == 'PR'? 'selected="selected"' : '';?>>PARANÁ</option>
+                                       <option value="PE"<?php echo $alu_cartorio_estado == 'PE'? 'selected="selected"' : '';?>>PERNAMBUCO</option>
+                                       <option value="PI"<?php echo $alu_cartorio_estado == 'PI'? 'selected="selected"' : '';?>>PIAUÍ</option>
+                                       <option value="RJ"<?php echo $alu_cartorio_estado == 'RJ'? 'selected="selected"' : '';?>>RIO DE JANEIRO</option>
+                                       <option value="RN"<?php echo $alu_cartorio_estado == 'RN'? 'selected="selected"' : '';?>>RIO GRANDE DO NORTE</option>
+                                       <option value="RS"<?php echo $alu_cartorio_estado == 'RS'? 'selected="selected"' : '';?>>RIO GRANDE DO SUL</option>
+                                       <option value="RO"<?php echo $alu_cartorio_estado == 'RO'? 'selected="selected"' : '';?>>RONDÔNIA</option>
+                                       <option value="RR"<?php echo $alu_cartorio_estado == 'RR'? 'selected="selected"' : '';?>>RORAIMA</option>
+                                       <option value="SC"<?php echo $alu_cartorio_estado == 'SC'? 'selected="selected"' : '';?>>SANTA CATARINA</option>
+                                       <option value="SP"<?php echo $alu_cartorio_estado == 'SP'? 'selected="selected"' : '';?>>SÃO PAULO</option>
+                                       <option value="SE"<?php echo $alu_cartorio_estado == 'SE'? 'selected="selected"' : '';?>>SERGIPE</option>
+                                       <option value="TO"<?php echo $alu_cartorio_estado == 'TO'? 'selected="selected"' : '';?>>TOCANTINS</option>
+                            	</select>
+                                </label>
+
+                                <label for="alu_cartorio_cidade" class="campo-menor no-margin-rigth">Cidade do Cartório:<br />
+                                <input type="text" name="alu_cartorio_cidade" id="alu_cartorio_cidade" class="input-form round" value="<?php echo $alu_cartorio_cidade?>" /></label>
+
+                                <label for="alu_livro" class="campo-menor">Livro:<br />
+                                <input type="text" name="alu_livro" id="alu_livro" class="input-form round" value="<?php echo $alu_livro?>" /></label>
+
+                                <label for="alu_folha" class="campo-menor no-margin-rigth">Folha:<br />
+                                <input type="text" name="alu_folha" id="alu_folha" class="input-form round" value="<?php echo $alu_folha?>" /></label>
+
+                                <label for="alu_inep" class="campo-menor">INEP:<br />
+                                <input type="text" name="alu_inep" id="alu_inep" class="input-form round" value="<?php echo $alu_inep?>" /></label>
+
+                                <label for="alu_nis" class="campo-menor no-margin-rigth">NIS:<br />
+                                <input type="text" name="alu_nis" id="alu_nis" class="input-form round" value="<?php echo $alu_nis?>" /></label>
+
+                                <label for="alu_telefone" class="campo-menor">Telefone:<br />
+                                <input type="text" name="alu_telefone" id="alu_telefone" class="input-form round phone" value="<?php echo $alu_telefone?>" /></label>
+
+                                <label for="alu_celular" class="campo-menor no-margin-rigth">Celular:<br />
+                                <input type="text" name="alu_celular" id="alu_celular" class="input-form round phone" value="<?php echo $alu_celular?>" /></label>
+
+                                <label for="alu_email" class="campo-menor">Email:<br />
+                                <input type="text" name="alu_email" id="alu_email" class="validate[custom[email]] input-form round" value="<?php echo $alu_email?>" /></label>
+
+                                <label for="alu_cep" class="campo-menor no-margin-rigth">CEP:<br />
+                                <input type="text" name="alu_cep" id="alu_cep" class="validate[required] input-form round cepDefault" value="<?php echo $alu_cep?>" /></label>
+
+                                <label for="alu_endereco">Endereço:<br />
+                                <input type="text" name="alu_endereco" id="alu_endereco" class="validate[required] input-form round" value="<?php echo $alu_endereco?>" /></label>
+
+                                <label for="alu_numero" class="campo-menor">Número:<br />
+                                <input type="text" name="alu_numero" id="alu_numero" class="validate[required] input-form round" value="<?php echo $alu_numero?>" /></label>
+
+                                <label for="alu_complemento" class="campo-menor no-margin-rigth">Complemento:<br />
+                                <input type="text" name="alu_complemento" id="alu_complemento" class="input-form round" value="<?php echo $alu_complemento?>" /></label>
+
+                                <label for="alu_bairro" class="campo-menor">Bairro:<br />
+                                <input type="text" name="alu_bairro" id="alu_bairro" class="validate[required] input-form round" value="<?php echo $alu_bairro?>" /></label>
+
+                                <label for="alu_estado" class="campo-menor no-margin-rigth">Estado:<br />
+                                <select name="alu_estado" id="alu_estado" class="validate[required] input-form round">
+                                       <option value="">Selecione</option>
+                                       <option value="AC"<?php echo $alu_estado == 'AC'? 'selected="selected"' : '';?>>ACRE</option>
+                                       <option value="AL"<?php echo $alu_estado == 'AL'? 'selected="selected"' : '';?>>ALAGOAS</option>
+                                       <option value="AP"<?php echo $alu_estado == 'AP'? 'selected="selected"' : '';?>>AMAPA</option>
+                                       <option value="AM"<?php echo $alu_estado == 'AM'? 'selected="selected"' : '';?>>AMAZONAS</option>
+                                       <option value="BA"<?php echo $alu_estado == 'BA'? 'selected="selected"' : '';?>>BAHIA</option>
+                                       <option value="CE"<?php echo $alu_estado == 'CE'? 'selected="selected"' : '';?>>CEARÁ</option>
+                                       <option value="DF"<?php echo $alu_estado == 'DF'? 'selected="selected"' : '';?>>DISTRITO FEDERAL</option>
+                                       <option value="ES"<?php echo $alu_estado == 'ES'? 'selected="selected"' : '';?>>ESPÍRITO SANTO</option>
+                                       <option value="GO"<?php echo $alu_estado == 'GO'? 'selected="selected"' : '';?>>GOIAS</option>
+                                       <option value="MA"<?php echo $alu_estado == 'MA'? 'selected="selected"' : '';?>>MARANHÃO</option>
+                                       <option value="MT"<?php echo $alu_estado == 'MT'? 'selected="selected"' : '';?>>MATO GROSSO</option>
+                                       <option value="MS"<?php echo $alu_estado == 'MS'? 'selected="selected"' : '';?>>MATO GROSSO DO SUL</option>
+                                       <option value="MG"<?php echo $alu_estado == 'MG'? 'selected="selected"' : '';?>>MINAS GERAIS</option>
+                                       <option value="PA"<?php echo $alu_estado == 'PA'? 'selected="selected"' : '';?>>PARÁ</option>
+                                       <option value="PB"<?php echo $alu_estado == 'PB'? 'selected="selected"' : '';?>>PARAÍBA</option>
+                                       <option value="PR"<?php echo $alu_estado == 'PR'? 'selected="selected"' : '';?>>PARANÁ</option>
+                                       <option value="PE"<?php echo $alu_estado == 'PE'? 'selected="selected"' : '';?>>PERNAMBUCO</option>
+                                       <option value="PI"<?php echo $alu_estado == 'PI'? 'selected="selected"' : '';?>>PIAUÍ</option>
+                                       <option value="RJ"<?php echo $alu_estado == 'RJ'? 'selected="selected"' : '';?>>RIO DE JANEIRO</option>
+                                       <option value="RN"<?php echo $alu_estado == 'RN'? 'selected="selected"' : '';?>>RIO GRANDE DO NORTE</option>
+                                       <option value="RS"<?php echo $alu_estado == 'RS'? 'selected="selected"' : '';?>>RIO GRANDE DO SUL</option>
+                                       <option value="RO"<?php echo $alu_estado == 'RO'? 'selected="selected"' : '';?>>RONDÔNIA</option>
+                                       <option value="RR"<?php echo $alu_estado == 'RR'? 'selected="selected"' : '';?>>RORAIMA</option>
+                                       <option value="SC"<?php echo $alu_estado == 'SC'? 'selected="selected"' : '';?>>SANTA CATARINA</option>
+                                       <option value="SP"<?php echo $alu_estado == 'SP'? 'selected="selected"' : '';?>>SÃO PAULO</option>
+                                       <option value="SE"<?php echo $alu_estado == 'SE'? 'selected="selected"' : '';?>>SERGIPE</option>
+                                       <option value="TO"<?php echo $alu_estado == 'TO'? 'selected="selected"' : '';?>>TOCANTINS</option>
+                            	</select>
+                                </label>
+
+                                <label for="alu_cidade" class="campo-menor">Cidade:<br />
+                                <input type="text" name="alu_cidade" id="alu_cidade" class="validate[required] input-form round" value="<?php echo $alu_cidade?>" /></label>
+
+                                 <label for="alu_raca" class="campo-menor no-margin-rigth">Raça:<br />
+                                <select name="alu_raca" id="alu_raca" class="validate[required] input-form round">
+                                       <option value="">Selecione</option>
+                                       <option value="1"<?php echo $alu_raca == '1'? 'selected="selected"' : '';?>>Amarelo</option>
+                                       <option value="2"<?php echo $alu_raca == '2'? 'selected="selected"' : '';?>>Branco</option>
+                                       <option value="3"<?php echo $alu_raca == '3'? 'selected="selected"' : '';?>>Indígena</option>
+                                       <option value="4"<?php echo $alu_raca == '4'? 'selected="selected"' : '';?>>Pardo</option>
+                                       <option value="5"<?php echo $alu_raca == '5'? 'selected="selected"' : '';?>>Preto</option>
+                            	</select>
+                                </label>
+
+                                <label for="alu_especial" class="campo-menor">Especial?<br />
+                                <input type="radio" name="alu_especial" id="alu_especial1"<?php echo ($alu_especial == 1 || $alu_especial == '') ? ' checked="checked"' : '' ;?> class="validate[required]" value="1" /> Sim
+                                <input type="radio" name="alu_especial" id="alu_especial0"<?php echo $alu_especial == 0 ? ' checked="checked"' : '';?> class="validate[required]" value="0" /> Não
+                                </label>
+
+                                <label for="alu_religiao" class="campo-menor no-margin-rigth">Religião:<br />
+                                <select name="alu_religiao" id="alu_religiao" class="validate[required] input-form round">
+                                       <option value="">Selecione</option>
+                                       <option value="1"<?php echo $alu_religiao == '1'? 'selected="selected"' : '';?>>Católica</option>
+                                       <option value="2"<?php echo $alu_religiao == '2'? 'selected="selected"' : '';?>>Evangélica</option>
+                                       <option value="3"<?php echo $alu_religiao == '3'? 'selected="selected"' : '';?>>Espírita</option>
+                                       <option value="4"<?php echo $alu_religiao == '4'? 'selected="selected"' : '';?>>Testemunhas de Jeová</option>
+                                       <option value="5"<?php echo $alu_religiao == '5'? 'selected="selected"' : '';?>>Umbanda e Candomblé</option>
+                                       <option value="6"<?php echo $alu_religiao == '5'? 'selected="selected"' : '';?>>Judaísmo</option>
+                                       <option value="7"<?php echo $alu_religiao == '5'? 'selected="selected"' : '';?>>Isliamismo</option>
+                                       <option value="8"<?php echo $alu_religiao == '5'? 'selected="selected"' : '';?>>Outras Religiões</option>
+                                       <option value="9"<?php echo $alu_religiao == '5'? 'selected="selected"' : '';?>>Sem Religião</option>
+                            	</select>
+                                </label>
+
+
+                                <label for="alu_destro" class="campo-menor">Destro?<br />
+                                <input type="radio" name="alu_destro" id="alu_destro1"<?php echo ($alu_destro == 1 || $alu_destro == '') ? ' checked="checked"' : '' ;?> class="validate[required]" value="1" /> Sim
+                                <input type="radio" name="alu_destro" id="alu_destro0"<?php echo $alu_destro == 0 ? ' checked="checked"' : '';?> class="validate[required]" value="0" /> Não
+                                </label>
+
+                                <label for="alu_transporte" class="campo-menor no-margin-rigth">Usa Transporte Escolar?<br />
+                                <input type="radio" name="alu_transporte" id="alu_transporte1"<?php echo ($alu_transporte == 1 || $alu_transporte == '') ? ' checked="checked"' : '' ;?> class="validate[required]" value="1" /> Sim
+                                <input type="radio" name="alu_transporte" id="alu_transporte0"<?php echo $alu_transporte == 0 ? ' checked="checked"' : '';?> class="validate[required]" value="0" /> Não
+                                </label>
+
+                                <label for="alu_mae">Nome da Mãe:<br />
+                                <input type="text" name="alu_mae" id="alu_mae" class="validate[required] input-form round" value="<?php echo $alu_mae?>" /></label>
+
+                                <label for="alu_mae_identidade" class="campo-menor">RG:<br />
+                                <input type="text" name="alu_mae_identidade" id="alu_mae_identidade" class="validate[required] input-form round" value="<?php echo $alu_mae_identidade?>" /></label>
+
+                                <label for="alu_mae_cpf" class="campo-menor no-margin-rigth">CPF:<br />
+                                <input type="text" name="alu_mae_cpf" id="alu_mae_cpf" class="validate[required] input-form round cpf" value="<?php echo $alu_mae_cpf?>" /></label>
+
+                                <label for="alu_mae_titulo" class="campo-menor">Título de Eleitor:<br />
+                                <input type="text" name="alu_mae_titulo" id="alu_mae_titulo" class="validate[required] input-form round numeric" value="<?php echo $alu_mae_titulo?>" /></label>
+
+                                <label for="alu_mae_zona" class="campo-menor no-margin-rigth">Zona:<br />
+                                <input type="text" name="alu_mae_zona" id="alu_mae_zona" class="validate[required] input-form round numeric" value="<?php echo $alu_mae_zona?>" /></label>
+
+                                <label for="alu_mae_secao" class="campo-menor">Seção:<br />
+                                <input type="text" name="alu_mae_secao" id="alu_mae_secao" class="validate[required] input-form round numeric" value="<?php echo $alu_mae_secao?>" /></label>
+
+                                <label for="alu_pai">Nome do Pai:<br />
+                                <input type="text" name="alu_pai" id="alu_pai" class="input-form round" value="<?php echo $alu_pai?>" /></label>
+
+                                <label for="alu_pai_identidade" class="campo-menor">RG:<br />
+                                <input type="text" name="alu_pai_identidade" id="alu_pai_identidade" class="input-form round" value="<?php echo $alu_pai_identidade?>" /></label>
+
+                                <label for="alu_pai_cpf" class="campo-menor no-margin-rigth">CPF:<br />
+                                <input type="text" name="alu_pai_cpf" id="alu_pai_cpf" class="input-form round cpf" value="<?php echo $alu_pai_cpf?>" /></label>
+
+                                <label for="alu_pai_titulo" class="campo-menor">Título de Eleitor:<br />
+                                <input type="text" name="alu_pai_titulo" id="alu_pai_titulo" class="input-form round numeric" value="<?php echo $alu_pai_titulo?>" /></label>
+
+                                <label for="alu_pai_zona" class="campo-menor no-margin-rigth">Zona:<br />
+                                <input type="text" name="alu_pai_zona" id="alu_pai_zona" class="input-form round numeric" value="<?php echo $alu_pai_zona?>" /></label>
+
+                                <label for="alu_pai_secao" class="campo-menor">Seção:<br />
+                                <input type="text" name="alu_pai_secao" id="alu_pai_secao" class="input-form round numeric" value="<?php echo $alu_pai_secao?>" /></label>
+
+                                <label> <input type="submit" value="ENVIAR" class="bt-enviar round " /></label>
+
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            <br clear="all" />
+            </div>
+        </section>
+
+        <script type="text/javascript" src="<?=URL_PORTAL."templates/" . TEMPLATE . "/"?>js/actionsAluno.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                $('#alu_cep').blur(function(){
+                    var cep = $(this).val();
+                    getEndereco(cep,'alu_endereco','alu_bairro','alu_cidade','alu_estado');
+                    $("#alu_numero").focus();
+                });
+
+            });
+
+
+        </script>
+

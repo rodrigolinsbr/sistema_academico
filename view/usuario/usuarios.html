@@ -1,0 +1,62 @@
+<?php
+foreach ($alunos as $lista_alunos) {
+
+    // echo "Id:".$lista_alunos->id_user;
+    // echo "<br>";
+    // echo "Nome: " .$lista_alunos->nome;
+}
+?>
+
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Listagem de Alunos</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <?php
+                    if (count($alunos) > 0):
+                        foreach($alunos as $lista_alunos):
+                ?>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Id:' .$lista_alunos->id_user;
+                                                            ?>
+                            <br />
+                                                        <!-- controller/alterar -->
+
+                            <!-- $lista_alunos->id_user  id_user deve ser igual ao que foi definido na classe-->
+                            <!-- view/usuario/alterar -->
+                            <a href="<?php echo URL_PORTAL?>usuario/editUserDocs/<?php echo $lista_alunos->id_user; ?>">dados pessoais</a><br>
+                            <a href="<?php echo URL_PORTAL?>usuario/editUserOferta/<?php echo $lista_alunos->cpf; ?>">dados profissionais e do programa</a><br>
+                            <a href="<?php echo URL_PORTAL?>usuario/editDataCourse/<?php echo $lista_alunos->cpf; ?>">dados do curso</a><br>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                            <?php
+                                echo 'Nome: ' .utf8_encode($lista_alunos->nome);
+
+                            ?>
+
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Email: '.utf8_encode($lista_alunos->email);
+                            ?>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Conselho: '.utf8_encode($lista_alunos->conselho);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                        endforeach;
+                    endif;
+                ?>
+            </div>

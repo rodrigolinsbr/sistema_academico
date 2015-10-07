@@ -1,0 +1,56 @@
+<h2>Gerar relatórios</h2>
+<br /><br />
+
+<form id="cadOferta" method="post" action="<?php echo URL_PORTAL?>relatorio/generateInfoAcad/">
+</select name="infoInscricao" onchange="filterSubjects('_mdl');">
+<legend>Relatório de inscrição no AVA</legend>
+<section class="wrapper-login">
+
+
+	<label for="formOfertas">Selecione a oferta</label>
+<select name="cod_oferta" id="cod_oferta" onchange="">
+<option value="ofertas">-</option>
+<?php
+foreach ($ofertas as $list) {
+      echo "<option value='$list->idoferta' category='$list->idoferta'>$list->nomeoferta</option>";
+}
+?>
+</select>
+<br><br>
+<button type="submit" id="submit" class="btn btn-default">Gerar relatório de informações academicas</button>
+<!-- <button type="submit" style="float: right;" id="submit" class="btn btn-default">Gerar relatório de ingressantes</button> -->
+</form>
+
+<!-- --------------------------------------------------------------------- -->
+<br /><br /><br /><br />
+<legend>Relatório de ingressantes para a Arouca</legend>
+<form id="infoIngressanteArouca" method="post" action="<?php echo URL_PORTAL?>relatorio/generateInfoArouca">
+<select>
+	<option value="ingressante_arouca">-</option>
+</select>
+</form>
+
+
+<!-- --------------------------------------------------------------------- -->
+<br /><br /><br /><br />
+<legend>Relatório de informações acadêmicas</legend>
+<form id="infoAcademica" method="post" action="<?php echo URL_PORTAL?>relatorio/generateInfoIngressante">
+<select>
+	<option value="info_academica">-</option>
+</select>
+</form>
+
+<script type"text/javascript">
+    function filterSubjects(sufix) {
+      var cat = $('#codoferta'+sufix+' option[value="'+$('#codoferta'+sufix).val()+'"]').attr('category');
+      $('#disciplina'+sufix+' option').each(function() {
+
+        if ($(this).attr('category') == cat || $(this).attr('name') == 'defaultDisc') {
+          $(this).show();
+        }
+        else {
+          $(this).hide();
+        }
+      });
+    }
+    </script>

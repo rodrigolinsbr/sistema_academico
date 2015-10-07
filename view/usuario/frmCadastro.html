@@ -1,0 +1,136 @@
+<script type="text/javascript">
+
+	function cadastrar()
+	{
+
+		$("#form5").validate({
+			rules: {
+			nome: "required",
+			email: {
+					required: true,
+					email: true
+					},
+			senha: "required",
+			cidade: "required",
+			uf: "required",
+			time: "required"
+		},
+			messages: {
+			nome: "Informe seu Nome!\n",
+			login: "Informe um login para acessar o sistema\n",
+			senha: "Informe sua Senha!\n",
+			endereco: "Informe seu "
+			email: "Informe seu E-mail!\n",
+
+			cidade: "Informe sua Cidade!\n",
+			uf: "Informe seu Estado!\n",
+			time: "Informe seu Time!\n"
+			}
+		});
+
+		if ($("#form5").valid()){
+
+			var nome     = $("#nome").val();
+			var email    = $("#email").val();
+			var senha    = $("#senha").val();
+			var cidade   = $("#cidade").val();
+			var uf       = $("#uf").val();
+			var time     = $("#time").val();
+
+
+			var dados    = "email="+email+"&senha="+senha+"&nome="+nome+"&cidade="+cidade+"&uf="+uf+"&time="+time;
+
+			$("#loading").ajaxStart(function(){
+				$(this).show(); // enquanto o arquivo estiver sendo procurado
+			})
+
+			$("#loading").ajaxComplete(function(){
+				$(this).hide(); // quando o arquivo completar
+			})
+
+			$.ajax({
+				type: "POST",
+				url: "<?php print URL_PORTAL;?>usuario/processaCadastro/",
+				data: dados,
+				dataType: "xml",
+				success: function(xml){
+
+					var dataArray  = xml.getElementsByTagName("mensagem");
+
+					for(var i = 0 ; i < dataArray.length ; i++) {
+						var item = dataArray[i];
+						var msg = item.getElementsByTagName("msg")[0].firstChild.nodeValue;
+						//if(msg == 'ok'){
+						var url    =  item.getElementsByTagName("url")[0].firstChild.nodeValue;
+						//}
+
+					}
+
+					if(msg == 'ok'){
+						if(url == ""){
+							window.location.href = '<?=URL_PORTAL?>';
+						}else{
+							window.location.href = url;
+						}
+					}else{
+						alert(url);
+					}
+				},
+				error: function(){
+					alert("Ocorreu um erro no ajax");
+				}
+			});
+
+		}
+		return false;
+	}
+
+</script>
+<h1>Registre-se</h1>
+<form id="form5" action="" method="post" onsubmit="return cadastrar()">
+		<p>
+			<label for="nome">Nome:</label>
+			<input type="text" name="nome" id="nome" size="50" />
+		</p>
+		<p>
+			<label for="login">Login:</label>
+			<input type="text" name="login" id="login" size="50" />
+		</p>
+		<p>
+			<label for="senha">Senha</label>
+			<input type="password" name="senha" id="senha" size="30" />
+		</p>
+		<p>
+			<label for="endereco">Endereço</label>
+			<input type="password" name="senha" id="senha" size="30" />
+		</p>
+		<p>
+			<label for="telefone">Telefone:</label>
+			<input type="text" name="telefone" id="telefone" size="50" />
+		</p>
+		<p>
+			<label for="sexo">Sexo</label>
+			<input type="text" name="sexo" id="sexo" size="30" />
+		</p>
+		<p>
+			<label for="email">E-mail:</label>
+			<input type="text" name="email" id="email" size="50" />
+		</p>
+
+		<p>
+			<label for="cidade">Cidade</label>
+			<input type="text" name="cidade" id="cidade" size="30" />
+		</p>
+		<p>
+			<label for="uf">Estado</label>
+			<input type="text" name="uf" id="uf" size="2" />
+		</p>
+		<p>
+			<label for="time">Torce para:</label>
+			<input type="time" name="time" id="time" size="30" />
+		</p>
+
+		<br>
+		<button type="submit">Enviar</button><div id="loading" class="loading_login"><img alt="Carregando" src="<?php print URL_PORTAL?>templates/<?php print TEMPLATE?>/images/ajaxLoader.gif" width="16" height="16" style="vertical-align:middle;" />&nbsp;Carregando</div>
+
+</form>

@@ -1,0 +1,104 @@
+        <section class="right">
+
+        	<div class="borda-conteudo round">
+
+            	<table cellpadding="0" cellspacing="0" class="tb-conteudo">
+                	<tr class="titulo-tb">
+                    	<td>
+                        <h2>ALUNOS</h2>
+                        <a class="bt-relatorio" href="javascript:;">Relatorio</a>
+                        <a class="bt-imprimir" href="javascript:;">Imprimir</a>
+                        </td>
+
+                    <tr>
+
+                    <tr class="barra-add-novo-tb">
+                    	<td>
+                        <a href="<?php echo URL_PORTAL ?>aluno/add" class="bt-add">ADICIONAR NOVO ALUNO</a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    	<td>
+                            <form>
+                            	<table cellpadding="0" cellspacing="0" class="tabela-dados" id="tabela-dados">
+
+                                	<!--Título dados da Tabela-->
+                                	<thead>
+                                    	<tr id="titulo-dados">
+                                            <td class="first"><input type="checkbox" class="input-selecao"/></td>
+                                        	<td class="col01">Inscrição</td>
+                                            <td width="520">Nome</td>
+                                            <td class="col03">Situação Escolar</td>
+                                            <td class="col04">Data Situação</td>
+                                            <td class="col05">Escola</td>
+                                            <td class="acoes">Ações</td>
+                                    	</tr>
+                                    </thead>
+                                    <!--Fim Titulos dados da Tabela-->
+
+                                    <!--Rodape dados da Tabela-->
+
+                                    <tfoot>
+                                    	<tr id="rodape-dados">
+                                            <td colspan="10"><a href="javascript:;" class="bt-excluir-todos">EXCLUIR SELECIONADOS</a></td>
+                                    	</tr>
+                                    </tfoot>
+
+                                    <!-- FIm Rodape dados da Tabela-->
+
+                                    <!-- Dados da Tabela-->
+                                    <tbody>
+                                    <?php
+                                    if ($arrAlunos):
+                                        foreach($arrAlunos as $arrAlunos):
+                                    ?>
+                                    	<tr>
+                                            <td><input type="checkbox" value="<?php echo $arrAlunos->id?>" class="input-selecao"/></td>
+                                        	<td><?php echo $arrAlunos->id?></td>
+                                            <td><?php echo $arrAlunos->nome?></td>
+                                            <td><?php echo $arrAlunos->cidade?></td>
+                                            <td><?php echo $arrAlunos->estado?></td>
+                                            <td><?php echo $arrAlunos->ativo ? 'Ativo' : 'Inativo';?></td>
+                                            <td class="acoes" >
+                                            	<ul>
+                                            		<li><a href="<?php echo URL_PORTAL ?>aluno/editar/<?php echo $arrAlunos->id?>" class="bt-editar"></a></li>
+                                                	<li class="separador-acoes"></li>
+                                                	<li><a href="<?php echo URL_PORTAL ?>aluno/excluir/<?php echo $arrAlunos->id?>" class="bt-excluir"></a></li>
+                                                </ul>
+
+                                            </td>
+                                    	</tr>
+                                    <?php
+                                        endforeach;
+                                    endif;
+                                    ?>
+                                    </tbody>
+                                    <!--Fim dados da Tabela-->
+
+                                </table>
+                            </form>
+                            <script>zebra('tabela-dados','linha-cinza');</script>
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+                <ul id="paginacao">
+                	<li><a href="javascript:;" id="bt-anterior"></a></li>
+                	<li><a href="javascript:;">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;" class="selected">3</a></li>
+                    <li><a href="javascript:;">4</a></li>
+                    <li><a href="javascript:;">5</a></li>
+                    <li><a href="javascript:;">6</a></li>
+                    <li><a href="javascript:;" id="bt-proximo"></a></li>
+
+                </ul>
+
+            <br clear="all" />
+            </div>
+        </section>

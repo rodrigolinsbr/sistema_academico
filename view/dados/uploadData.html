@@ -1,0 +1,21 @@
+<section class="wrapper-login">
+	<h2>ENVIAR DADOS</h2>
+          <!-- controller/usuario/metodo_da_classe    -->
+          <!-- <form id="formCadastro" action="<?php //echo URL_PORTAL?>usuario/cadastrar/" method="post"> -->
+          <form name="formInputCSV" id="formCadastro" method="post" enctype="multipart/form-data" action="<?php echo URL_PORTAL?>dados/insertPlanilha/" >
+
+              <label for="csvFileInput">Enviar dados alunos</label>
+              <input type="file" name="csvFileInput" id="csvFileInput">
+              <br>
+              <label>Código da oferta</label>
+              <select name="codoferta">
+              	<option>--</option>
+              	<option>oferta fixa</option>
+              </select>
+              <br>
+              <label>Data de ingresso<br /> <input name="dataingresso" id="dataingresso" type="text" class="validate[required,custom[dataingresso]] input-form round"  /></label>
+
+              <label><input type="submit" value="cadastrar oferta"></label>
+
+          </form>
+</section>

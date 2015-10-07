@@ -1,0 +1,21 @@
+<div class="col-lg-12">
+  <h1 class="page-header">Alterar dados da oferta</h1>
+</div>
+<?php
+foreach ($return_course as $courses) {
+
+	// echo "Id:".$courses->id;
+	// echo "<br>";
+ //  echo "nome: " .$courses->nomeoferta;
+
+}
+?>
+
+
+            <!-- controller/curso/alterarRegistro -->
+              <form class="form-cadastro round" id="formUsuario" method="post" action="<?php echo URL_PORTAL?>curso/update/">
+              <label>Nome<br /> <input name="nomeoferta" id="nomeoferta" type="text" value="<?php echo $courses->nomeoferta; ?>" class="validate[required,custom[nomeoferta]] input-form round"  /></label>
+              <label>Código da oferta<br /> <input name="codoferta" id="codoferta" type="text" value="<?php echo $courses->codigooferta; ?>" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>Categoria da oferta<br /> <input name="categoria" id="categoria" type="text" value="<?php echo $courses->categoriaoferta; ?>" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label> <input id="submit" type="submit" value="Alterar" class="bt-enviar round " /></label>
+          </form>

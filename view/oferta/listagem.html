@@ -1,0 +1,20 @@
+<select>
+<?php
+echo "entrou na view";
+foreach ($arrayOfertasCadastradas as $ofertas) {
+
+	echo "<br> Id:".$ofertas->idoferta. "<br>";
+	echo "Nome: " .$ofertas->nomeoferta;
+	echo "codigo oferta: " .$ofertas->codoferta. "<br>";
+	echo "categoria: " .$ofertas->categoriaoferta. "<br>";
+	echo "<br>";
+
+
+	// echo '<option> '.$oferta->idoferta.' </option>';
+}
+?>
+</select>
+<label for="categoria">Categoria</label>
+<select name="categoria" id="categoria">
+	<option value="">teste</option>
+</select>

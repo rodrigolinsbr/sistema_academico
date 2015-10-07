@@ -1,0 +1,519 @@
+ $(document).ready(function () {
+ 
+                    //Prepare jTable
+                        $('#PeopleTableContainer').jtable({
+                                title: 'Informações acadêmicas',
+                                sorting: true,
+                                paging: true,
+                                pageSize: 30,
+                                defaultSorting: 'nome ASC', //Campo de la base de datos que se tomara para ordenar
+                                actions: {
+                                        listAction: 'consultas/oferta.php?action=list',
+                                        createAction: null,
+                                        updateAction: 'consultas/oferta.php?action=update',
+                                        deleteAction: 'consultas/oferta.php?action=delete'
+                                },
+                                fields: {
+                                        email: {
+                            title: '',
+                            width: '1%',
+                            sorting: false,
+                            edit: false,
+                            create: false,
+                            display: function (studentData) {
+                                //Create an image that will be used to open child table
+                                var $img = $('<center><img style="cursor:pointer;" src="img/contatos.png" title="Dados pessoais" /></center>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#PeopleTableContainer').jtable('openChildTable',
+                                            $img.closest('tr'),
+                                            {
+                                                title:  'Dados pessoais: '+studentData.record.nome,
+                                                actions: {
+                                                    listAction: 'consultas/userdocs.php?action=list&id=' + studentData.record.cpf,
+                                                    deleteAction: 'Demo/DeletePhone',
+                                                    updateAction: 'consultas/userdocs.php?action=update&cpf_user=' + studentData.record.cpf,
+                                                    createAction: null
+                                                },
+                                                fields: {
+                                                    id: {
+                                                        
+                                                         title: 'ID',
+                                                         list: false,
+                                                         type: 'hidden',
+                                                         defaultValue: studentData.record.id
+                                                    },
+                                                    nome: {
+                                                        title: 'Nome completo',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    cpf: {
+                                                        title: 'CPF',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    firstname: {
+                                                        title: 'Nome Moodle',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },    
+                                                    telefone: {
+                                                        title: 'Telefone',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },                                               
+                                                    email: {
+                                                        title: 'E-mail',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },                                                    
+                                                    uf_atuacao: {
+                                                        title: 'UF',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                     rg: {
+                                                        title: 'RGgg',
+                                                        key: true,
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    }
+                                                  
+ 
+                                                }
+                                            }, function (data) { //opened handler
+                                                data.childTable.jtable('load');
+                                            });
+                                });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                        },
+                        seila: {
+                            title: '',
+                            width: '1%',
+                            sorting: false,
+                            edit: false,
+                            create: false,
+                            display: function (studentData) {
+                                //Create an image that will be used to open child table
+                                var $img = $('<center><img style="cursor:pointer;" src="img/dados_academico.png" title="Dados profissionais e do programa" /></center>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#PeopleTableContainer').jtable('openChildTable',
+                                            $img.closest('tr'),
+                                            {
+                                                title:  'Dados profissionais e do programa: '+studentData.record.nome,
+                                                actions: {
+                                                    listAction: 'consultas/useroferta.php?action=list&id=' + studentData.record.cpf,
+                                                    deleteAction: 'Demo/DeletePhone',
+                                                    updateAction: 'consultas/useroferta.php?action=update&ciclo=' + studentData.record.ciclo,
+                                                    createAction: null
+                                                },
+                                                fields: {
+                                                    id_user_docs: {
+                                                         key: true,
+                                                         type: 'hidden',
+                                                         defaultValue: studentData.record.id
+                                                    },
+                                                    profissao: {
+                                                        title: 'Profissão',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    uf: {
+                                                        title: 'UF',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    programa: {
+                                                        title: 'Programa',
+                                                        create: false,
+                                                        edit: false,
+                                                        list: true
+                                                    },
+                                                    status_curso: {
+                                                        title: 'Status no curso',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    cpf: {
+                                                        title: 'CPF',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    }, 
+                                                    apto_tcc: {
+                                                        title: 'Apto para TCC',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    orientador: {
+                                                        title: 'Nome do orientador',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    recuperacao: {
+                                                        title: 'Recuperação',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    disciplinas: {
+                                                        title: 'Disciplinas',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    local_tcc: {
+                                                        title: 'Local apresentação do TCC',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    ciclo_entrada: {
+                                                        title: 'Ciclo',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    polo_propesq: {
+                                                        title: 'Polo Propesq',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    status_propesq: {
+                                                        title: 'Status propesq',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    municipio_lotacao: {
+                                                        title: 'Município',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    UF: {
+                                                        title: 'UF',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    obs: {
+                                                        title: 'Observação',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    identidade: {
+                                                        title: 'Identidade',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    emissor: {
+                                                        title: 'Emissor',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    data_nasc: {
+                                                        title: 'Data nascimento',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    mae: {
+                                                        title: 'Nome da mãe',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    pai: {
+                                                        title: 'Nome do pai',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    naturalidade: {
+                                                        title: 'Naturalidade',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    nacionalidade: {
+                                                        title: 'Nacionalidade',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    diploma: {
+                                                        title: 'Diploma',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    titulacao_orientador: {
+                                                        title: 'Titulação orientador',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    ficha_matricula: {
+                                                        title: 'Ficha de matrícula',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    obs2: {
+                                                        title: 'Observação*',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    dataingresso: {
+                                                        title: 'Data de ingresso',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    dataalteracao: {
+                                                        title: 'Data alteração',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    datadesligamento: {
+                                                        title: 'Data desligamento',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    },
+                                                    recesso: {
+                                                        title: 'Recesso',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: false
+                                                    }
+
+                                                }
+                                            }, function (data) { //opened handler
+                                                data.childTable.jtable('load');
+                                            });
+                                });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                        },
+                        notas: {
+                            title: '',
+                            width: '1%',
+                            sorting: false,
+                            edit: false,
+                            create: false,
+                            display: function (studentData) {
+                                //Create an image that will be used to open child table
+                                
+                                // <img style="cursor:pointer;" src="img/notas_disciplina.png" title="Notas Disciplina" />
+                                var $img = $('<center><span style="font-size: 16px; cursor: pointer;" class="glyphicon glyphicon-folder-open" aria-hidden="true" title="Dados do curso"></span></center>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#PeopleTableContainer').jtable('openChildTable',
+                                            $img.closest('tr'),
+                                            {
+                                                title:  'Dados do curso: '+studentData.record.nome,
+                                                actions: {
+                                                    listAction: 'consultas/notasDisciplina.php?action=list&id=' + studentData.record.cpf+'&category='+studentData.record.categoryid + '&user='+studentData.record.idmoodle,
+                                                    deleteAction: 'Demo/DeletePhone',
+                                                    updateAction: 'consultas/notasDisciplina.php?action=update&ciclo=' + studentData.record.ciclo,
+                                                    createAction: null
+                                                },
+                                                fields: {
+                                                    userid: {
+                                                         key: true,
+                                                         type: 'hidden',
+                                                         defaultValue: studentData.record.id
+                                                    },
+                                                    desempenho: {
+                                                        title: 'Status no curso',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    frequencia: {
+                                                        title: 'frequencia curso',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    status_propesq: {
+                                                        title: 'Situação matrícula na Propesq',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    local_tcc: {
+                                                        title: 'Local para apresentação do TCC',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    apto_tcc: {
+                                                        title: 'Apto para apresentar TCC?',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    orientador: {
+                                                        title: 'Nome do orientador',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    coursename: {
+                                                        title: 'Disciplina',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    finalgrade: {
+                                                        title: 'Média final',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                            },
+                                            rec_eixo1: {
+                                                        title: 'Recuperação no eixo 1?',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                            },
+                                            rec_eixo2: {
+                                                        title: 'Recuperação no eixo 2?',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                            }
+
+                                                }
+                                            }, function (data) { //opened handler
+                                                data.childTable.jtable('load');
+                                            });
+                                 });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                        },
+
+                         grupos: {
+                            title: '',
+                            width: '1%',
+                            sorting: false,
+                            edit: false,
+                            create: false,
+                            display: function (studentData) {
+                                //Create an image that will be used to open child table
+                                
+                               var $img = $('<center><img style="cursor:pointer;" src="img/grupo.png" title="Dados do AVA" /></center>');
+                                //var $img = $('<span style="font-size: 17px; cursor: pointer;" class="icon-large icon-group" aria-hidden="true" title="Dados do AVA"></span>');
+
+
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#PeopleTableContainer').jtable('openChildTable',
+                                            $img.closest('tr'),
+                                            {
+                                                title:  'Dados do AVA: '+studentData.record.nome,
+                                                actions: {
+                                                    listAction: 'consultas/grupos.php?action=list&id=' + studentData.record.cpf+'&category='+studentData.record.categoryid + '&user='+studentData.record.idmoodle,
+                                                    deleteAction: 'Demo/DeletePhone',
+                                                    updateAction: 'consultas/grupos.php?action=update&ciclo=' + studentData.record.ciclo,
+                                                    createAction: null
+                                                },
+                                                fields: {
+                                                    groupid: {
+                                                        title: 'Id do grupo',
+                                                         key: true,                                                         
+                                                         defaultValue: studentData.record.id
+                                                    },
+                                                    groupname: {
+                                                        title: 'Nome grupo',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    },
+                                                    courseid: {
+                                                        title: 'Tutor',
+                                                        create: false,
+                                                        edit: true,
+                                                        list: true
+                                                    }
+
+                                                }
+                                            }, function (data) { //opened handler
+                                                data.childTable.jtable('load');
+                                            });
+                                 });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                        },
+
+                                        idmoodle: {
+                                                key: true,
+                                                list: false,
+                                                title:'id do moodle',
+ 
+                                               
+                                        },
+                                        nome: {
+                                                title:'Nome completo'
+                                               
+                                        },
+                                        cpf: {
+                                                title:'CPF'
+                                               
+                                        },
+
+                                        telefone: {
+                                            title:'Telefone'
+                                        },
+                                        codoferta: {
+                                                title:'Código da oferta',
+                                                list: false,
+                                                edit: true
+                                               
+                                        },
+                                        
+                                        categoryid: {
+                                            title: 'Categoria',
+                                            list: false,
+                                            edit: true
+                                        }                           
+                                       
+                                }
+                        });
+ });
+
+ 

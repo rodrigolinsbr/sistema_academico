@@ -1,0 +1,23 @@
+
+<section class="wrapper-login">
+	<h2>CADASTRO CEDES</h2>
+
+        <form class="form-cadastro round" id="formUsuario" action="<?php echo URL_PORTAL?>cedes/processalogin/" method="post">
+
+        <!-- <form class="form-cadastro round" id="formUsuario" action="< echo URL_PORTAL?>cedes/processalogin/" method="post">  entra no controller controller/cedes/metodo_desejado -->
+        	   <p>
+        	   	<?php echo $somatorio;?>
+        	   </p>
+              <label>Nome<br /> <input name="nome" id="nome" type="text" class="validate[required,custom[nome]] input-form round"  /></label>
+              <label>E-mail<br /> <input name="email" id="email" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Profissao<br /> <input name="profissao" id="profissao" type="text" class="validate[required,custom[profissao]] input-form round"  /></label>
+              <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social"/></label>
+
+              <!-- solicitacao obrigatoria -->
+              <!-- <label>Rede Social<br /> <input type="text" name="rede_social" id="rede_social" class="validate[required] input-form round"  /></label> -->
+
+
+              <label> <input type="submit" value="ENTRAR" class="bt-enviar round " /></label>
+
+          </form>
+</section>

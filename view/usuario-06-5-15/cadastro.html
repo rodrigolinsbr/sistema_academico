@@ -1,0 +1,28 @@
+
+<section class="wrapper-login">
+	<h2>CADASTRO</h2>
+          <!-- controller/usuario/metodo_da_classe    -->
+          <!-- <form id="formCadastro" action="<?php //echo URL_PORTAL?>usuario/cadastrar/" method="post"> -->
+          <form id="formCadastro" method="post" action="<?php echo URL_PORTAL?>usuario/cadastrar/" >
+
+              <label>Nome<br /> <input name="nome" id="nome" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+               <label>Email<br /> <input name="email" id="email" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Login<br /> <input name="login" id="login" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+              <label>Senha<br /> <input type="password" name="senha" id="senha" class="validate[required] input-form round"  /></label>
+
+              <label><input type="submit" value="cadastrar"></label>
+
+          </form>
+
+          <br/>
+
+          <form id="formCadastro" action="<?php echo URL_PORTAL?>usuario/listar/" method="post">
+            <label><input type="submit" value="listagem usuario"></label>
+          </form>
+
+          <br />
+          <form id="formCadastro" action="<?php echo URL_PORTAL?>usuario/pesquisar/" method="post">
+            <label>Email<br /> <input name="email" id="email" type="text" class="validate[required,custom[email]] input-form round"  /></label>
+            <label><input type="submit" value="pesquisar"></label>
+          </form>
+</section>

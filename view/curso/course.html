@@ -1,0 +1,76 @@
+<?php
+// foreach ($alunos as $lista_alunos) {
+
+// 	echo "Id:".$lista_alunos->id_usuario;
+// 	echo "<br>";
+// 	echo "Nome: " .$lista_alunos->nome;
+// }
+?>
+
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Ofertas cadastradas</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <?php
+                    if (count($courses) > 0):
+                        foreach($courses as $courseList):
+
+                ?>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Id:' .$courseList->id_user;
+                            ?>
+                            <br />
+                                                        <!-- controller/alterar -->
+
+
+                            <!-- controller/usuario/alterar  Chamo a função-->
+                            <a href="<?php echo URL_PORTAL?>curso/alterar/<?php echo $courseList->id_user; ?>">editar</a>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                            <?php
+                                echo 'Nome oferta: ' .utf8_encode($courseList->nome);
+
+                            ?>
+
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Código da oferta: '.utf8_encode($courseList->codoferta);
+                            ?>
+                        </div>
+                        <!-- <div class="panel-body">
+                            <?php
+                                echo 'CPF: '.utf8_encode($courseList->cpf);
+                            ?>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Telefone: '.utf8_encode($courseList->telefone);
+                            ?>
+                        </div>
+                        <div class="panel-body">
+                            <?php
+                                echo 'Email: '.utf8_encode($courseList->email);
+                            ?>
+                        </div>
+                        <div class="panel-footer">
+                            <?php
+                                echo 'Categoria do curso: '.utf8_encode($courseList->categoryid);
+                            ?>
+                        </div> -->
+                    </div>
+                </div>
+                <?php
+
+                        endforeach;
+                    endif;
+                ?>
+            </div>

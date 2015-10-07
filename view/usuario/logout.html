@@ -1,0 +1,12 @@
+<?php
+	$_SESSION['usuario']['id'] = '';
+	unset($_SESSION['usuario']['id']);
+	$_SESSION['usuario']['email'] = '';
+	unset($_SESSION['usuario']['email']);
+	$_SESSION['usuario']['senha'] = '';
+	unset($_SESSION['usuario']['senha']);
+	session_destroy();
+?>
+<script type="text/javascript">
+	location.href = '<?=URL_PORTAL?>';
+</script>

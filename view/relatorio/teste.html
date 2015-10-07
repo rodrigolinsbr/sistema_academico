@@ -1,0 +1,34 @@
+<?php
+foreach ($oferta as $list) {
+      echo 'Id:' .$list->idoferta;
+}
+?>
+
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">teste</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <?php
+                    if (count($oferta) > 0):
+                        foreach($oferta as $list):
+                ?>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <?php
+                                echo 'Id:' .$list->idoferta;
+                                echo 'Id:' .$list->nomeoferta;
+                            ?>
+
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                        endforeach;
+                    endif;
+                ?>
+            </div>
